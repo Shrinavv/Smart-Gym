@@ -1,0 +1,64 @@
+:root {
+  --bg-dark: #121212;
+  --card-bg: #1e1e1e;
+  --text-main: #e0e0e0;
+  --text-muted: #888888;
+  --border-color: #333333;
+  --good: #2ecc71;
+  --warning: #f1c40f;
+  --danger: #e74c3c;
+  --accent: #3498db;
+}
+
+body { 
+  font-family: 'Segoe UI', Roboto, sans-serif; 
+  margin: 0; 
+  padding: 20px;
+  background: var(--bg-dark); 
+  color: var(--text-main);
+}
+
+.container { max-width: 1200px; margin: auto; }
+header { text-align: center; margin-bottom: 30px; }
+h1 span { color: var(--accent); font-weight: bold; }
+
+.live-indicator { 
+    color: var(--danger); 
+    font-size: 0.8em; 
+    font-weight: bold; 
+    animation: pulse 1.5s infinite; 
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+}
+
+.card { 
+  background: var(--card-bg); 
+  padding: 25px; 
+  border-radius: 15px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.chart-container, .table-container { grid-column: 1 / -1; }
+
+.coach-display { border-left: 10px solid #555; }
+
+/* AI Feedback State Colors */
+.state-good { border-left-color: var(--good); background: linear-gradient(90deg, rgba(46, 204, 113, 0.05) 0%, var(--card-bg) 100%); }
+.state-warn { border-left-color: var(--warning); background: linear-gradient(90deg, rgba(241, 196, 15, 0.05) 0%, var(--card-bg) 100%); }
+.state-danger { border-left-color: var(--danger); background: linear-gradient(90deg, rgba(231, 76, 60, 0.05) 0%, var(--card-bg) 100%); }
+
+#ai-status-title { font-size: 1.8em; margin: 10px 0; }
+.rep-counter-large { font-size: 3.5em; font-weight: bold; text-align: right; color: var(--accent); }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border-color); }
+th { color: var(--text-muted); font-size: 0.8em; text-transform: uppercase; }
+
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+canvas { width: 100% !important; height: 350px !important; }

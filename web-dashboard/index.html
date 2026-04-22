@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Gym Dashboard - Local Mode</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gym Intelligence: <span id="user-display">Awaiting Tap...</span></h1>
+            <div class="status-bar">Local Hub Sync: <span class="live-indicator">● LIVE</span></div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="card coach-display">
+                <div class="coach-header">
+                    <h2>AI Coach Feedback</h2>
+                </div>
+                <hr>
+                <h3 id="ai-status-title">Stand by...</h3>
+                <p id="ai-feedback-text">Position yourself in front of the camera to begin form analysis.</p>
+                
+                <p id="rest-advice" style="font-weight:bold; margin-top:15px; min-height: 1.5em;"></p> 
+                
+                <div class="rep-counter-large">REPS: <span id="rep-display">0</span></div>
+            </div>
+
+            <div class="card chart-container">
+                <h2>Form Analysis (Real-time)</h2>
+                <canvas id="motionChart"></canvas>
+            </div>
+
+            <div class="card table-container">
+                <div id="machine-history">
+                    <p style="text-align:center; color:var(--text-muted);">Awaiting session data...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
